@@ -1,0 +1,15 @@
+stages:
+  download:
+    cmd: Rscript R/download.R
+    deps:
+    - https://ftp.ncbi.nlm.nih.gov/pub/clinvar/tab_delimited
+    - R/download.R
+    outs:
+    - download/
+  build:
+    cmd: Rscript R/build.R
+    deps:
+    - R/build.R
+    - download/
+    outs:
+    - data/
