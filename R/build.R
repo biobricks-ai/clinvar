@@ -19,6 +19,3 @@ parse <- function(file){
 # WRITE OUTS ===================================================================
 fs::dir_ls(out) |> fs::file_delete() # delete old files
 walk2(deps,outs, ~ parse(.x) |> write_parquet(.y))
-
-# TESTS ========================================================================
-map(dir_ls("data"),read_parquet) |> walk(~ if(ncol(.)<2){stop("parse failure")})
