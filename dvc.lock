@@ -1,0 +1,31 @@
+schema: '2.0'
+stages:
+  download:
+    cmd: Rscript R/download.R
+    deps:
+    - path: R/download.R
+      md5: eb6b2a839539f7f0bfe35c6419ef6ee8
+      size: 480
+    - path: https://ftp.ncbi.nlm.nih.gov/pub/clinvar/tab_delimited
+      checksum: '"10d7-5de3be21bd315"'
+      size: 4311
+    outs:
+    - path: download/
+      md5: e727f937bbadfcfb65d0453c45604e55.dir
+      size: 1184201392
+      nfiles: 10
+  build:
+    cmd: Rscript R/build.R
+    deps:
+    - path: R/build.R
+      md5: 91ba10630008819b8f6c8ec3d1ac2947
+      size: 694
+    - path: download/
+      md5: e727f937bbadfcfb65d0453c45604e55.dir
+      size: 1184201392
+      nfiles: 10
+    outs:
+    - path: data/
+      md5: 5b1aaf77a8d1e9ba8dcac75cf230dbd7.dir
+      size: 849160557
+      nfiles: 10
