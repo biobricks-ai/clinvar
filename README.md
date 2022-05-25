@@ -1,3 +1,5 @@
+<a href="https://github.com/biobricks-ai/clinvar/actions"><img src="https://github.com/biobricks-ai/clinvar/actions/workflows/bricktools-check.yaml/badge.svg?branch=main"/></a>
+
 # biobricks-ai/clinvar
 **url**: https://www.ncbi.nlm.nih.gov/clinvar/
 
