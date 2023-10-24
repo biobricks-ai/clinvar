@@ -7,25 +7,30 @@ stages:
       md5: eb6b2a839539f7f0bfe35c6419ef6ee8
       size: 480
     - path: https://ftp.ncbi.nlm.nih.gov/pub/clinvar/tab_delimited
-      checksum: '"10d7-5de737957bd8d"'
-      size: 4311
+      hash: md5
+      checksum: '"1151-60848432862e4"'
+      size: 4433
     outs:
     - path: download/
-      md5: e21427c7aedbff627efa11f96125714e.dir
-      size: 1186276196
+      hash: md5
+      md5: 9b5ce352912fce9fab41fa63e91415cd.dir
+      size: 1825723979
       nfiles: 10
   build:
     cmd: Rscript R/build.R
     deps:
     - path: R/build.R
-      md5: 91ba10630008819b8f6c8ec3d1ac2947
-      size: 694
+      hash: md5
+      md5: c881108e2eceeffaa613d4bc04659e23
+      size: 695
     - path: download/
-      md5: e21427c7aedbff627efa11f96125714e.dir
-      size: 1186276196
+      hash: md5
+      md5: 9b5ce352912fce9fab41fa63e91415cd.dir
+      size: 1825723979
       nfiles: 10
     outs:
-    - path: data/
-      md5: aa7f062aeed4501931af16098ce96b86.dir
-      size: 837997832
+    - path: brick/
+      hash: md5
+      md5: 06565e39688576e0ae53484a2dd3e9de.dir
+      size: 1390924713
       nfiles: 10

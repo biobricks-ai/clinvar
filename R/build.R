@@ -7,7 +7,7 @@ library(dplyr)
 tsub <- \(p,r){partial(gsub,pattern=p,replacement=r,ignore.case=T)}
 
 deps <- dir_ls("download")
-out  <- dir_create("data")
+out  <- dir_create("brick")
 outs <- path(out,path_file(deps)) |> tsub("\\..*",".parquet")()
 
 parse <- function(file){
